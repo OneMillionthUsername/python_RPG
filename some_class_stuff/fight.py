@@ -1,18 +1,24 @@
 import player as p
 import monster as m
 import random as rnd
+import time
 
 def fight(player, monster):
-	while player.Health > 0 & monster.Health > 0:
+	while player.Health > 0 and monster.Health > 0:
 		hit = ((player.Strength + rnd.randint(1,5))*3)%20
 		monster.Health -= hit
 		print(f'{player.Name} hits {monster.Name} for {hit} damage.')
-		player.Health -= ((monster.Strength + rnd.randint(1,5))*3)%15
+		hit = ((monster.Strength + rnd.randint(1,5))*3)%15
+		player.Health -= hit
 		print(f'{monster.Name} hits {player.Name} for {hit} damage.')
+		print(f'{player.Name} HP: {player.Health}')
+		print(f'{monster.Name} HP: {monster.Health}')
+		time.sleep(1)
 
 	if player.Health <= 0:
 		print('Game over!')
 	else:
+		print(f'{monster.Name} falls to the ground.')
 		player.Expirience += monster.Expirience_give
 		print(f'{player.Name} gains {monster.Expirience_give} expirience.')
 		player.Money += monster.Money
