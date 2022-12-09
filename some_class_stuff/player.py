@@ -5,6 +5,12 @@ class player():
 	items = []
 	level = 1
 	money = 0
+	Strength = None
+	Agility = None
+	Intelligence = None
+	Health = None
+	Mana = None
+	Expirience = None
 
 	def __init__(self) -> None:
 		#x = input('Welcome! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
