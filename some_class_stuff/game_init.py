@@ -9,12 +9,10 @@ import item_pool as ip
 #init player
 player = p.player()
 #init items
-
-
-
-
-
-m.Monster.monster_set_loot_bag(ip.pool)
+ip.item_pool_init()
+items = ip.pool
+monster = m.Monster(4)
+monster.items = monster.monster_set_loot_bag(items)
 
 
 
