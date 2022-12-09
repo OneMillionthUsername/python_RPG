@@ -1,11 +1,11 @@
 import item as i
 
 class player():
-	playClass = None
-	name = None
-	items = []
-	level = 1
-	money = 0
+	PlayClass = None
+	Name = None
+	Items = []
+	Level = 1
+	Money = 0
 	Strength = None
 	Agility = None
 	Intelligence = None
@@ -14,23 +14,23 @@ class player():
 	Ragepoints = None
 	Spiritpoints = None
 	Evasionpoints = None
-	Expirience = None
+	Expirience = 0
 
 	def __init__(self, name) -> None:
-		self.name = name
+		self.Name = name
 		#x = input(f'Welcome {self.name}! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
 		x = 'w'
 		match x.lower():
 			case 'w':
-				self.playClass = 'Warrior'
+				self.PlayClass = 'Warrior'
 				self.Strength = 17
 				self.Agility = 10
 				self.Intelligence = 7
 				self.Health = self.Strength * 15
 				self.Mana = self.Intelligence * 10
-				self.ragepoints = 100
+				self.Ragepoints = 100
 			case 'm':
-				self.playClass = 'Magician'
+				self.PlayClass = 'Magician'
 				self.Strength = 7
 				self.Agility = 10
 				self.Intelligence = 17
@@ -38,7 +38,7 @@ class player():
 				self.Manapoints = self.Intelligence * 15
 				self.Spiritpoint = 100
 			case 'b':
-				self.playClass = 'Bowmaster'
+				self.PlayClass = 'Bowmaster'
 				self.Strength = 10
 				self.Agility = 17
 				self.Intelligence = 7
@@ -72,3 +72,4 @@ class player():
 		print('Inventory')
 		for i in self.items:
 			i.item_print()
+
