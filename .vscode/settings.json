@@ -1,0 +1,5 @@
+{
+	"githubPullRequests.ignoredPullRequestBranches": [
+		"testing_stuff"
+	]
+}
