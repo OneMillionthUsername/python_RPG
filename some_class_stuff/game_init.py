@@ -7,7 +7,7 @@ import random as rnd
 import item_pool as ip
 
 #init player
-player = p.player()
+player = p.player("Dean")
 #init items
 ip.item_pool_init()
 items = ip.pool
