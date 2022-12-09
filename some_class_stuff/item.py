@@ -13,8 +13,8 @@ class Item():
 		pass
 	
 	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, rarity) -> None:
-		self.name = name
-		self.price = price
+		self.Name = name
+		self.Price = price
 		self.Strength = strength
 		self.Agility = agility
 		self.Intelligence = intelligence
