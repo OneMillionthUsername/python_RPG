@@ -4,7 +4,7 @@ class Monster():
 	def	__init__(self) -> None:
 		pass
 	level = 1
-	items = []
+	items = None
 	strength = level * rnd.randint(1,level *3)
 	agility = level * rnd.randint(1,level *3)
 	intelligence = level * rnd.randint(1,level *3)
@@ -16,7 +16,7 @@ class Monster():
 		self.items.append(item)
 
 	def monster_set_loot_bag(self, item):
-		self.items.append(item)
+		self.items = item
 
 	def monster_get_loot_bag(self):
 		return self.items
