@@ -6,6 +6,9 @@ import time
 def fight(player, monster):
 	player.health_reset()
 	monster.health_reset()
+	items_pool = monster.Items.copy()
+	item_drop = items_pool[rnd.randint(0, len(items_pool) - 1)]
+ 
 	while player.Health > 0 and monster.Health > 0:
 		hit = ((player.Strength + rnd.randint(1,5))*3)%40
 		monster.Health -= hit
@@ -15,7 +18,7 @@ def fight(player, monster):
 		print(f'{monster.Name} hits {player.Name} for {hit} damage.')
 		print(f'{player.Name} HP: {player.Health}')
 		print(f'{monster.Name} HP: {monster.Health}')
-		time.sleep(1)
+		#time.sleep(1)
 
 	if player.Health <= 0:
 		print('Game over!')
@@ -25,12 +28,11 @@ def fight(player, monster):
 		player.Expirience += monster.Expirience_give
 		print(f'{player.Name} gains {monster.Expirience_give} expirience.')
 		player.Money += monster.Money
-		items_pool = monster.Items.copy()
-		items_drop = items_pool[rnd.randint(0, len(items_pool) - 1)]
-		if items_drop.Drop_chance == True:
-			player.Items.append(items_drop)
-			print(f'You found {monster.Money} gold and a {items_drop.Rarity} {items_drop.Name}.', 'red')
-			print(items_drop.item_print())
+
+		if item_drop.Drop_chance != 0:
+			player.Items.append(item_drop)
+			print(f'You found {monster.Money} gold and a {item_drop.Rarity} {item_drop.Name}.')
+			item_drop.item_print()
 			return False
 		else:
 			print(f'You found {monster.Money} gold.', 'green')

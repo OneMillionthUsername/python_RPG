@@ -31,7 +31,7 @@ class Monster():
 		self.Mana = self.Intelligence * self.Level
 		self.Expirience_give = self.Level * self.Strength
 		self.Money = self.Level * rnd.randint(10,30)
-		self.Chance_to_drop_item = 100/rnd.randint(2, 4)
+		self.Chance_to_drop_item = 100/rnd.randint(1, 10)
 
 	def health_reset(self):
 		if self.Health_default != None:

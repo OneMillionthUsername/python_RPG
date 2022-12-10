@@ -11,9 +11,6 @@ class Item():
 	Levelbonus = None
 	Drop_chance = None
 	Rarity = ['normal', 'magic', 'rare', 'epic', 'unique', 'legendary']
-
-	def __init__(self) -> None:
-		pass
 	
 	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, rarity, chance) -> None:
 		self.Name = name
