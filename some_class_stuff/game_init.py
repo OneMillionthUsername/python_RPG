@@ -3,7 +3,7 @@ import monster as m
 import fight as f
 import item as i
 import random as rnd
-import item_pool as ip
+import item_init as ip
 
 def main():
 	#init player

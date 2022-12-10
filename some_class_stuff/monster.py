@@ -1,5 +1,5 @@
 import random as rnd
-import item_pool as ip
+import item_init as ip
 
 class Monster():
 	Name = None
