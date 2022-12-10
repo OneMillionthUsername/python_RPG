@@ -17,4 +17,4 @@ def item_pool_init():
 		j += 1
 
 def Drop_factor():
-	return 100/r.randint(2,5)
+	return 100/r.randint(1,10)
