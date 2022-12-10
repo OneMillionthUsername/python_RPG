@@ -17,7 +17,8 @@ class Monster():
 	Spirit = None
 	Evasion = None
 	Expirience_give = None
-	
+	Chance_to_drop_item = None
+
 	def	__init__(self, name, battle_class, max_level) -> None:
 		self.Name = name
 		self.Battle_class = battle_class
@@ -30,6 +31,7 @@ class Monster():
 		self.Mana = self.Intelligence * self.Level
 		self.Expirience_give = self.Level * self.Strength
 		self.Money = self.Level * rnd.randint(10,30)
+		self.Chance_to_drop_item = 100/rnd.randint(2, 4)
 
 	def health_reset(self):
 		if self.Health_default != None:
@@ -40,4 +42,3 @@ class Monster():
 
 	def set_loot_bag(self, item):
 		self.Items = item.copy()
-		

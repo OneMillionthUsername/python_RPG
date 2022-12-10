@@ -12,6 +12,7 @@ ip.item_pool_init()
 items = ip.pool
 monster = m.Monster("Bat", "flying", 4)
 monster.items = monster.set_loot_bag(items)
+
 condition = True
 while condition:
 	condition = f.fight(player, monster)

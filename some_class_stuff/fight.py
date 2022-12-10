@@ -29,9 +29,9 @@ def fight(player, monster):
 		items_drop = items_pool[rnd.randint(0, len(items_pool) - 1)]
 		if items_drop.Drop_chance == True:
 			player.Items.append(items_drop)
-			print(f'You found {monster.Money} gold and a {items_drop.Rarity} {items_drop.Name}.')
+			print(f'You found {monster.Money} gold and a {items_drop.Rarity} {items_drop.Name}.', 'red')
 			print(items_drop.item_print())
 			return False
 		else:
-			print(f'You found {monster.Money} gold.')
+			print(f'You found {monster.Money} gold.', 'green')
 			return True

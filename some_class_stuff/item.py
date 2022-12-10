@@ -15,7 +15,7 @@ class Item():
 	def __init__(self) -> None:
 		pass
 	
-	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, rarity) -> None:
+	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, rarity, chance) -> None:
 		self.Name = name
 		self.Price = price
 		self.Strength = strength
@@ -25,14 +25,7 @@ class Item():
 		self.Manabonus = mana
 		self.Levelbonus = level
 		self.Rarity = self.Rarity[rarity]
-		self.Drop_chance = self.item_calc_dropchance()
+		self.Drop_chance = chance #1/3 chance, that item is in pool
 	
 	def item_print(self):
 		print('Name:',self.Name, 'Price:',self.Price, 'Gold:', 'Strength:',self.Strength, 'Agility:',self.Agility, 'Intelligence:',self.Intelligence, 'Healthbonus:',self.Healthbonus, 'Manabonus:',self.Manabonus, 'Levelbonus:',self.Levelbonus, 'Rarity:',self.Rarity, 'Dropchance:', self.Drop_chance)
-
-	def item_calc_dropchance(self) -> bool:
-		self.Drop_chance = r.randint(1,100)
-		if self.Drop_chance in range(1, 15):
-			return True
-		else:
-			return False
