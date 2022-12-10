@@ -18,7 +18,7 @@ class Monster():
 	Evasion = None
 	Expirience_give = None
 	Chance_to_drop_item = None
-
+ 
 	def	__init__(self, name, battle_class, max_level) -> None:
 		self.Name = name
 		self.Battle_class = battle_class

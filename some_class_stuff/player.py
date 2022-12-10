@@ -35,21 +35,22 @@ class player():
 				self.Strength = 7
 				self.Agility = 10
 				self.Intelligence = 17
-				self.Healthpoints = self.Strength * 10
-				self.Manapoints = self.Intelligence * 15
+				self.Health = self.Strength * 10
+				self.Mana = self.Intelligence * 15
 				self.Spiritpoint = 100
 			case 'b':
 				self.PlayClass = 'Bowmaster'
 				self.Strength = 10
 				self.Agility = 17
 				self.Intelligence = 7
-				self.Healthpoints = self.Agility * 10
-				self.Manapoints = self.Intelligence * 10
-				self.Evasionpoints = 100
+				self.Health = self.Agility * 10
+				self.Mana = self.Intelligence * 10
+				self.Evasion = 100
+		self.Health_default = self.Health
 
 	def health_reset(self):
 		if self.Health_default != None:
-			self.Health = self.Strength * 15
+			self.Health = self.Health_default
 	
 	def player_add_item(self, item):
 		self.items.append(item)

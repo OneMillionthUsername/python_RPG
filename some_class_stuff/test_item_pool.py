@@ -12,6 +12,3 @@ class Testing(unittest.TestCase):
         
     def test_drop(self):
         self.assertLess(item_pool.Drop_factor(), 51, print('possible chance for an item to drop =', item_pool.Drop_factor()))
-
-#if __name__ == '__main__':
-    #unittest.main()
