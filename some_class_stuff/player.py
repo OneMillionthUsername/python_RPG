@@ -10,6 +10,7 @@ class player():
 	Agility = None
 	Intelligence = None
 	Health = None
+	Health_default = None
 	Mana = None
 	Ragepoints = None
 	Spiritpoints = None
@@ -45,6 +46,10 @@ class player():
 				self.Healthpoints = self.Agility * 10
 				self.Manapoints = self.Intelligence * 10
 				self.Evasionpoints = 100
+
+	def health_reset(self):
+		if self.Health_default != None:
+			self.Health = self.Strength * 15
 	
 	def player_add_item(self, item):
 		self.items.append(item)
