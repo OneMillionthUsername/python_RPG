@@ -1,12 +1,11 @@
 """TESTINT item pool and drop chance
 """
-
 import item_init
 import unittest
 
 class Testing(unittest.TestCase):
     def test_count(self):
-        item_init.item_init_init()
+        item_init.item_pool_init()
         count = len(item_init.pool)
         self.assertGreater(count, 0, print('items in pool =', count))
         
