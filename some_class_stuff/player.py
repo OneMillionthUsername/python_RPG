@@ -1,4 +1,4 @@
-import item as i
+from item import Item
 
 class player():
 	PlayClass = None
@@ -56,7 +56,7 @@ class player():
 	def player_add_item(self, item):
 		self.items.append(item)
 	
-	def player_get_item(self, item) -> i.Item:
+	def player_get_item(self, item) -> Item:
 		if item in self.items:
 			return item
 
@@ -79,4 +79,3 @@ class player():
 		print('Inventory')
 		for i in self.items:
 			i.item_print()
-

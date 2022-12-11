@@ -1,5 +1,5 @@
 import random as rnd
-import item_init as ip
+from item import Item
 
 class Monster():
 	Name = None
@@ -13,6 +13,7 @@ class Monster():
 	Health = None
 	Health_default = None
 	Mana = None
+	Mana_default = None
 	Rage = None
 	Spirit = None
 	Evasion = None
@@ -30,16 +31,21 @@ class Monster():
 		self.Health = rnd.randint(150,250)
 		self.Health_default = self.Health
 		self.Mana = self.Intelligence * self.Level
+		self.Mana_default = self.Mana
 		self.Expirience_give = self.Level * self.Strength
 		self.Money = self.Level * rnd.randint(10,30)
 		self.Chance_to_drop_item = 100/rnd.randint(1, 200)
+		self.item_pool_init()
 
 	def health_reset(self):
 		if self.Health_default != None:
 			self.Health = self.Health_default
 
-	def monster_add_items(self, item):
-		self.items.append(item)
-
-	def set_loot_bag(self, item):
-		self.Items = item.copy()
+	def item_pool_init(self, level = 5):
+		i = 0
+		for i in range(level):
+			item = Item()
+			#fo Item_create
+			#item = Item(self.weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
+			self.Items.append(item)
+			i += 1

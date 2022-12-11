@@ -1,22 +1,20 @@
 import player as p
 import monster as m
 import fight as f
-import item_init as item
 
-#def main():
-#init player
-player = p.player("Dean")
-#init items
-item.item_pool_init()
-items = item.pool
-#init monster
-monster = m.Monster("Bat", "flying", 4)
-monster.items = monster.set_loot_bag(items)
+def main():
 
-#main
-condition = True
-while condition:
-	condition = f.fight(player, monster)
+	#main
+	count = 0
+	condition = True
+	while condition:
+		#init player
+		player = p.player("Dean")
+		#init monster
+		monster = m.Monster("Bat", "flying", 4)
+		condition = f.fight(player, monster)
+		count += 1
+	print('Number of fights for legendary item:', count)
 
-#if __name__ == "__main__":
-	#main()
+if __name__ == "__main__":
+	main()
