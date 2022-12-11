@@ -10,11 +10,6 @@ pool = []
 
 def item_pool_init():
 	for j in range(10):
-		item = i.Item(weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), Drop_factor())
-
-		if r.randint(1,100) <= Drop_factor():
-			pool.append(item)
+		item = i.Item(weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
+		pool.append(item)
 		j += 1
-
-def Drop_factor():
-	return 100/r.randint(1,10)

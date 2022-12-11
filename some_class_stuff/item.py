@@ -28,15 +28,15 @@ class Item():
 		print('Name:',self.Name, 'Price:',self.Price, 'Gold:', 'Strength:',self.Strength, 'Agility:',self.Agility, 'Intelligence:',self.Intelligence, 'Healthbonus:',self.Healthbonus, 'Manabonus:',self.Manabonus, 'Levelbonus:',self.Levelbonus, 'Rarity:',self.Rarity, 'Dropchance:', self.Drop_chance)
 
 	def set_item_rarity(self):
-		if self.Drop_chance <= 1:
+		if self.Drop_chance <= 2:
 			self.Rarity = self.Rarity[5]
-		elif self.Drop_chance <= 3:
+		elif self.Drop_chance <= 4:
 			self.Rarity = self.Rarity[4]
-		elif self.Drop_chance <= 7:
+		elif self.Drop_chance <= 8:
 			self.Rarity = self.Rarity[3]
-		elif self.Drop_chance <= 15:
+		elif self.Drop_chance <= 16:
 			self.Rarity = self.Rarity[2]
-		elif self.Drop_chance <= 34:
+		elif self.Drop_chance <= 32:
 			self.Rarity = self.Rarity[1]
 		else:
 			self.Rarity = self.Rarity[0]

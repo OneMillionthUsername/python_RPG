@@ -15,12 +15,12 @@ def fight(player, monster) -> bool:
 	while player.Health > 0 and monster.Health > 0:
 		hit = ((player.Strength + r.randint(1,5))*3)%40
 		monster.Health -= hit
-		print(f'{player.Name} hits {monster.Name} for {hit} damage.')
+		#print(f'{player.Name} hits {monster.Name} for {hit} damage.')
 		hit = ((monster.Strength + r.randint(1,5))*3)%10
 		player.Health -= hit
-		print(f'{monster.Name} hits {player.Name} for {hit} damage.')
-		print(f'{player.Name} HP: {player.Health}')
-		print(f'{monster.Name} HP: {monster.Health}')
+		#print(f'{monster.Name} hits {player.Name} for {hit} damage.')
+		#print(f'{player.Name} HP: {player.Health}')
+		#print(f'{monster.Name} HP: {monster.Health}')
 		count += 1
 		#time.sleep(1)
 
@@ -40,6 +40,8 @@ def fight(player, monster) -> bool:
 			if item_drop.Rarity == 'legendary':
 				print('Number of fights:', count)
 				return False
+			else:
+				return True
 		else:
 			print(f'You found {monster.Money} gold.', 'green')
 			return True
