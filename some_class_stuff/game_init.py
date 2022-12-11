@@ -12,9 +12,13 @@ def main():
 		#init player
 		#init monster
 		monster = Monster(4)
-		condition = f.fight(player, monster)
+		f.fight(player, monster)
+		if player.Level == 99:
+			condition == False
+		else:
+			condition == True
 		count += 1
-	print('Number of fights for this item rarity:', count)
+	#print('Number of fights for this item rarity:', count)
 
 if __name__ == "__main__":
 	main()

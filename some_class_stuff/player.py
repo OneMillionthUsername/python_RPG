@@ -16,6 +16,7 @@ class Player():
 	Spiritpoints = None
 	Evasionpoints = None
 	Expirience = 0
+	Exp_needed_for_level_up = 100
 
 #create player
 	def __init__(self, name) -> None:
@@ -60,8 +61,20 @@ class Player():
 		if item in self.items:
 			return item
 
-	def player_add_level(self):
-		self.level += 1
+	#def level_curve_log():
+		#f = open("exp_table.txt", "a")
+		#f.write(f'level {self.Level}: exp {self.Exp_needed_for_level_up}\n')
+		#f.close()
+		
+	def player_level_up(self):
+		while self.Expirience > self.Exp_needed_for_level_up:
+			self.Expirience -= self.Exp_needed_for_level_up
+			if self.Level != 1:
+				self.Exp_needed_for_level_up = self.Exp_needed_for_level_up + (self.Level - 1) * 100
+			else:
+				self.Exp_needed_for_level_up += 100
+			self.Level += 1
+			print('Congratulations! You are now level', self.Level)
 
 	def player_get_class(self):
 		return self.playClass
