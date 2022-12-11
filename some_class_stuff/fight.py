@@ -1,7 +1,4 @@
-import player as p
-import monster as m
 import random as r
-from item import Item
 import time
 
 def fight(player, monster) -> bool:

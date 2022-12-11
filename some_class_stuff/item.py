@@ -15,8 +15,20 @@ class Item():
 	weapon_names_magician = ["Staff", "Wand", "Papyrus"]
 	weapon_names_bowmaster = ["Bow", "Crossbow", "Slingshot"]
 	pool = []
+ 
+	def __init__(self) -> None:
+		self.Name = self.weapon_names_warrior[r.randint(0, len(self.weapon_names_warrior)-1)]
+		self.Price = r.randint(10, 50)
+		self.Strength = r.randint(1, 10)
+		self.Agility = r.randint(1, 5)
+		self.Intelligence = 0
+		self.Healthbonus = r.randint(10,20)
+		self.Manabonus = 0
+		self.Levelbonus = 0
+		self.Drop_chance = r.randint(1, 100)
+		self.set_item_rarity()
 	
-	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, chance, rarity = 0) -> None:
+	def Item_create(self, name, price, strength, agility, intelligence, health, mana, level, chance, rarity = 0):
 		self.Name = name
 		self.Price = price
 		self.Strength = strength
@@ -45,9 +57,11 @@ class Item():
 		else:
 			self.Rarity = self.Rarity[0]
 
-	def item_pool_init(self):
+	def item_pool_init(self, level = 5):
 		j = 0
-		for j in range(10):
-			item = Item(self.weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
+		for j in range(level):
+			item = Item()
+			#fo Item_create
+			#item = Item(self.weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
 			self.pool.append(item)
 			j += 1
