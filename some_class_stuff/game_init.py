@@ -1,8 +1,6 @@
 import player as p
 import monster as m
 import fight as f
-import item as i
-import random as rnd
 import item_init as ip
 
 def main():

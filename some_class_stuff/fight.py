@@ -12,12 +12,12 @@ def fight(player, monster):
 	while player.Health > 0 and monster.Health > 0:
 		hit = ((player.Strength + rnd.randint(1,5))*3)%40
 		monster.Health -= hit
-		print(f'{player.Name} hits {monster.Name} for {hit} damage.')
+		#print(f'{player.Name} hits {monster.Name} for {hit} damage.')
 		hit = ((monster.Strength + rnd.randint(1,5))*3)%10
 		player.Health -= hit
-		print(f'{monster.Name} hits {player.Name} for {hit} damage.')
-		print(f'{player.Name} HP: {player.Health}')
-		print(f'{monster.Name} HP: {monster.Health}')
+		#print(f'{monster.Name} hits {player.Name} for {hit} damage.')
+		#print(f'{player.Name} HP: {player.Health}')
+		#print(f'{monster.Name} HP: {monster.Health}')
 		#time.sleep(1)
 
 	if player.Health <= 0:
