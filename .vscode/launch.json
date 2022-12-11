@@ -7,8 +7,8 @@
 			"request": "launch",
 			"program": "${file}",
 			"console": "integratedTerminal",
-			"justMyCode": false,
-			"stopOnEntry": true
+			"justMyCode": true,
+			"stopOnEntry": false
 		}
 	]
 }
