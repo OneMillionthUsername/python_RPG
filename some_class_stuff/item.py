@@ -22,7 +22,7 @@ class Item():
 		self.Manabonus = mana
 		self.Levelbonus = level
 		self.Rarity = self.Rarity[rarity]
-		self.Drop_chance = chance #1/3 chance, that item is in pool
+		self.Drop_chance = chance 
 	
 	def item_print(self):
 		print('Name:',self.Name, 'Price:',self.Price, 'Gold:', 'Strength:',self.Strength, 'Agility:',self.Agility, 'Intelligence:',self.Intelligence, 'Healthbonus:',self.Healthbonus, 'Manabonus:',self.Manabonus, 'Levelbonus:',self.Levelbonus, 'Rarity:',self.Rarity, 'Dropchance:', self.Drop_chance)
