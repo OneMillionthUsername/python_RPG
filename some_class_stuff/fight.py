@@ -8,7 +8,6 @@ def fight(player, monster) -> bool:
 	if len(items_pool) > 0:
 		item_drop = items_pool[r.randint(0, len(items_pool) - 1)]
 	
-	count = 0
 	while player.Health > 0 and monster.Health > 0:
 		hit = ((player.Strength + r.randint(1,5))*3)%40
 		monster.Health -= hit
@@ -18,7 +17,6 @@ def fight(player, monster) -> bool:
 		#print(f'{monster.Name} hits {player.Name} for {hit} damage.')
 		#print(f'{player.Name} HP: {player.Health}')
 		#print(f'{monster.Name} HP: {monster.Health}')
-		count += 1
 		#time.sleep(1)
 
 	if player.Health <= 0:
@@ -35,7 +33,6 @@ def fight(player, monster) -> bool:
 			print(f'You found {monster.Money} gold and a {item_drop.Rarity} {item_drop.Name}.')
 			item_drop.item_print()
 			if item_drop.Rarity == 'legendary':
-				print('Number of fights:', count)
 				return False
 			else:
 				return True

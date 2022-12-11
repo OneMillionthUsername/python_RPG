@@ -79,4 +79,3 @@ class player():
 		print('Inventory')
 		for i in self.items:
 			i.item_print()
-

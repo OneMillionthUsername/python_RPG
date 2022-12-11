@@ -41,12 +41,6 @@ class Monster():
 		if self.Health_default != None:
 			self.Health = self.Health_default
 
-	def monster_add_items(self, item):
-		self.items.append(item)
-
-	def set_loot_bag(self, item):
-		self.Items = item.copy()
-
 	def item_pool_init(self, level = 5):
 		i = 0
 		for i in range(level):
