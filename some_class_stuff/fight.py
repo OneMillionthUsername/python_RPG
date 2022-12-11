@@ -28,9 +28,9 @@ def fight(player, monster) -> bool:
 		print('Game over!')
 		return False
 	else:
-		print(f'{monster.Name} falls to the ground.')
+		#print(f'{monster.Name} falls to the ground.')
 		player.Expirience += monster.Expirience_give
-		print(f'{player.Name} gains {monster.Expirience_give} expirience.')
+		#print(f'{player.Name} gains {monster.Expirience_give} expirience.')
 		player.Money += monster.Money
 
 		if len(items_pool) > 0 and item_drop.Drop_chance >= r.randint(1,100):
@@ -43,5 +43,5 @@ def fight(player, monster) -> bool:
 			else:
 				return True
 		else:
-			print(f'You found {monster.Money} gold.', 'green')
+			#print(f'You found {monster.Money} gold.', 'green')
 			return True
