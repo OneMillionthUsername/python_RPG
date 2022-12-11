@@ -2,7 +2,7 @@ import random as rnd
 from item import Item
 
 class Monster():
-	Name = ['Dragon', 'Bat', 'Bug', 'Wolf', 'Spider']
+	Name = ['Dragon', 'Bat', 'Bug', 'Wolf', 'Spider', 'Lion', 'Dinosaur', 'Whale', 'Kakadu']
 	Kind = ['Reptile', 'Arachnoid', 'Fish', 'Bird', 'Ancient', 'Notoriouts', 'Boss', 'Feral', 'Insect', 'Humanoid', 'Ghost', 'Energy']
 	ElementType = ['Water', 'Electro', 'Air', 'Earth', 'Light', 'Dark', 'Holy', 'Unholy', 'God']
 	Battle_class = ['Flying', 'Swimming', 'Normal', 'Furious', 'Tame', 'Aggressive', 'Anxious']
@@ -24,10 +24,10 @@ class Monster():
 	Drop_seed = 200 
  
 	def	__init__(self, max_level) -> None:
-		self.Name = self.Name[rnd.randint(0, len(self.Name))]
-		self.Battle_class = self.Battle_class[rnd.randint(0, len(self.Battle_class))]
-		self.Kind = self.Kind[rnd.randint(0, len(self.Kind))]
-		self.ElementType = self.ElementType[rnd.randint(0, len(self.ElementType))]
+		self.Name = self.Name[rnd.randint(0, len(self.Name)-1)]
+		self.Battle_class = self.Battle_class[rnd.randint(0, len(self.Battle_class)-1)]
+		self.Kind = self.Kind[rnd.randint(0, len(self.Kind)-1)]
+		self.ElementType = self.ElementType[rnd.randint(0, len(self.ElementType)-1)]
 		self.Level = rnd.randint(1,max_level)
 		self.Strength = self.Level * rnd.randint(1,self.Level *10)
 		self.Agility = self.Level * rnd.randint(1,self.Level *7)

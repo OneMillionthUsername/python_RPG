@@ -1,6 +1,6 @@
 from item import Item
 
-class player():
+class Player():
 	PlayClass = None
 	Name = None
 	Items = []

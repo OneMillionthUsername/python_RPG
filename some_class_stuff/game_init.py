@@ -1,5 +1,5 @@
-import player as p
-import monster as m
+from player import Player
+from monster import Monster
 import fight as f
 
 def main():
@@ -7,11 +7,11 @@ def main():
 	#main
 	count = 0
 	condition = True
-	player = p.player("Dean")
+	player = Player("Dean")
 	while condition:
 		#init player
 		#init monster
-		monster = m.Monster("Bat", "flying", 4)
+		monster = Monster(4)
 		condition = f.fight(player, monster)
 		count += 1
 	print('Number of fights for this item rarity:', count)
