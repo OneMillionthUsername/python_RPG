@@ -18,6 +18,7 @@ class Monster():
 	Evasion = None
 	Expirience_give = None
 	Chance_to_drop_item = None
+	Drop_seed = 200 
  
 	def	__init__(self, name, battle_class, max_level) -> None:
 		self.Name = name
@@ -31,7 +32,7 @@ class Monster():
 		self.Mana = self.Intelligence * self.Level
 		self.Expirience_give = self.Level * self.Strength
 		self.Money = self.Level * rnd.randint(10,30)
-		self.Chance_to_drop_item = 100/rnd.randint(1, 10)
+		self.Chance_to_drop_item = 100/rnd.randint(1, 200)
 
 	def health_reset(self):
 		if self.Health_default != None:

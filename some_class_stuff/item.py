@@ -12,7 +12,7 @@ class Item():
 	Drop_chance = None
 	Rarity = ['normal', 'magic', 'rare', 'epic', 'unique', 'legendary']
 	
-	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, rarity, chance) -> None:
+	def __init__(self, name, price, strength, agility, intelligence, health, mana, level, chance, rarity = 0) -> None:
 		self.Name = name
 		self.Price = price
 		self.Strength = strength
@@ -21,8 +21,22 @@ class Item():
 		self.Healthbonus = health
 		self.Manabonus = mana
 		self.Levelbonus = level
-		self.Rarity = self.Rarity[rarity]
-		self.Drop_chance = chance 
+		self.Drop_chance = chance
+		self.set_item_rarity()
 	
 	def item_print(self):
 		print('Name:',self.Name, 'Price:',self.Price, 'Gold:', 'Strength:',self.Strength, 'Agility:',self.Agility, 'Intelligence:',self.Intelligence, 'Healthbonus:',self.Healthbonus, 'Manabonus:',self.Manabonus, 'Levelbonus:',self.Levelbonus, 'Rarity:',self.Rarity, 'Dropchance:', self.Drop_chance)
+
+	def set_item_rarity(self):
+		if self.Drop_chance <= 1:
+			self.Rarity = self.Rarity[5]
+		elif self.Drop_chance <= 3:
+			self.Rarity = self.Rarity[4]
+		elif self.Drop_chance <= 7:
+			self.Rarity = self.Rarity[3]
+		elif self.Drop_chance <= 15:
+			self.Rarity = self.Rarity[2]
+		elif self.Drop_chance <= 34:
+			self.Rarity = self.Rarity[1]
+		else:
+			self.Rarity = self.Rarity[0]

@@ -17,6 +17,7 @@ class player():
 	Evasionpoints = None
 	Expirience = 0
 
+#create player
 	def __init__(self, name) -> None:
 		self.Name = name
 		#x = input(f'Welcome {self.name}! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
