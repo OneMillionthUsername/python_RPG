@@ -2,11 +2,13 @@ import random as rnd
 from item import Item
 
 class Monster():
-	Name = None
+	Name = ['Dragon', 'Bat', 'Bug', 'Wolf', 'Spider']
+	Kind = ['Reptile', 'Arachnoid', 'Fish', 'Bird', 'Ancient', 'Notoriouts', 'Boss', 'Feral', 'Insect', 'Humanoid', 'Ghost', 'Energy']
+	ElementType = ['Water', 'Electro', 'Air', 'Earth', 'Light', 'Dark', 'Holy', 'Unholy', 'God']
+	Battle_class = ['Flying', 'Swimming', 'Normal', 'Furious', 'Tame', 'Aggressive', 'Anxious']
 	Items = []
 	Level = 1
 	Money = 0
-	Battle_class = None
 	Strength = None
 	Agility = None
 	Intelligence = None
@@ -21,9 +23,11 @@ class Monster():
 	Chance_to_drop_item = None
 	Drop_seed = 200 
  
-	def	__init__(self, name, battle_class, max_level) -> None:
-		self.Name = name
-		self.Battle_class = battle_class
+	def	__init__(self, max_level) -> None:
+		self.Name = self.Name[rnd.randint(0, len(self.Name))]
+		self.Battle_class = self.Battle_class[rnd.randint(0, len(self.Battle_class))]
+		self.Kind = self.Kind[rnd.randint(0, len(self.Kind))]
+		self.ElementType = self.ElementType[rnd.randint(0, len(self.ElementType))]
 		self.Level = rnd.randint(1,max_level)
 		self.Strength = self.Level * rnd.randint(1,self.Level *10)
 		self.Agility = self.Level * rnd.randint(1,self.Level *7)
