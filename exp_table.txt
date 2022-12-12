@@ -1,100 +1,100 @@
-level 1: exp 100
-level 2: exp 200
-level 3: exp 300
-level 4: exp 500
-level 5: exp 800
-level 6: exp 1200
-level 7: exp 1700
-level 8: exp 2300
-level 9: exp 3000
-level 10: exp 3800
-level 11: exp 4700
-level 12: exp 5700
-level 13: exp 6800
-level 14: exp 8000
-level 15: exp 9300
-level 16: exp 10700
-level 17: exp 12200
-level 18: exp 13800
-level 19: exp 15500
-level 20: exp 17300
-level 21: exp 19200
-level 22: exp 21200
-level 23: exp 23300
-level 24: exp 25500
-level 25: exp 27800
-level 26: exp 30200
-level 27: exp 32700
-level 28: exp 35300
-level 29: exp 38000
-level 30: exp 40800
-level 31: exp 43700
-level 32: exp 46700
-level 33: exp 49800
-level 34: exp 53000
-level 35: exp 56300
-level 36: exp 59700
-level 37: exp 63200
-level 38: exp 66800
-level 39: exp 70500
-level 40: exp 74300
-level 41: exp 78200
-level 42: exp 82200
-level 43: exp 86300
-level 44: exp 90500
-level 45: exp 94800
-level 46: exp 99200
-level 47: exp 103700
-level 48: exp 108300
-level 49: exp 113000
-level 50: exp 117800
-level 51: exp 122700
-level 52: exp 127700
-level 53: exp 132800
-level 54: exp 138000
-level 55: exp 143300
-level 56: exp 148700
-level 57: exp 154200
-level 58: exp 159800
-level 59: exp 165500
-level 60: exp 171300
-level 61: exp 177200
-level 62: exp 183200
-level 63: exp 189300
-level 64: exp 195500
-level 65: exp 201800
-level 66: exp 208200
-level 67: exp 214700
-level 68: exp 221300
-level 69: exp 228000
-level 70: exp 234800
-level 71: exp 241700
-level 72: exp 248700
-level 73: exp 255800
-level 74: exp 263000
-level 75: exp 270300
-level 76: exp 277700
-level 77: exp 285200
-level 78: exp 292800
-level 79: exp 300500
-level 80: exp 308300
-level 81: exp 316200
-level 82: exp 324200
-level 83: exp 332300
-level 84: exp 340500
-level 85: exp 348800
-level 86: exp 357200
-level 87: exp 365700
-level 88: exp 374300
-level 89: exp 383000
-level 90: exp 391800
-level 91: exp 400700
-level 92: exp 409700
-level 93: exp 418800
-level 94: exp 428000
-level 95: exp 437300
-level 96: exp 446700
-level 97: exp 456200
-level 98: exp 465800
-level 99: exp 475500
-level 100: exp 485300
+level; exp
+1; 100
+2; 200
+3; 300
+4; 500
+5; 800
+6; 1200
+7; 1700
+8; 2300
+9; 3000
+10; 3800
+11; 4700
+12; 5700
+13; 6800
+14; 8000
+15; 9300
+16; 10700
+17; 12200
+18; 13800
+19; 15500
+20; 17300
+21; 19200
+22; 21200
+23; 23300
+24; 25500
+25; 27800
+26; 30200
+27; 32700
+28; 35300
+29; 38000
+30; 40800
+31; 43700
+32; 46700
+33; 49800
+34; 53000
+35; 56300
+36; 59700
+37; 63200
+38; 66800
+39; 70500
+40; 74300
+41; 78200
+42; 82200
+43; 86300
+44; 90500
+45; 94800
+46; 99200
+47; 103700
+48; 108300
+49; 113000
+50; 117800
+51; 122700
+52; 127700
+53; 132800
+54; 138000
+55; 143300
+56; 148700
+57; 154200
+58; 159800
+59; 165500
+60; 171300
+61; 177200
+62; 183200
+63; 189300
+64; 195500
+65; 201800
+66; 208200
+67; 214700
+68; 221300
+69; 228000
+70; 234800
+71; 241700
+72; 248700
+73; 255800
+74; 263000
+75; 270300
+76; 277700
+77; 285200
+78; 292800
+79; 300500
+80; 308300
+81; 316200
+82; 324200
+83; 332300
+84; 340500
+85; 348800
+86; 357200
+87; 365700
+88; 374300
+89; 383000
+90; 391800
+91; 400700
+92; 409700
+93; 418800
+94; 428000
+95; 437300
+96; 446700
+97; 456200
+98; 465800
+99; 475500

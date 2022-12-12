@@ -36,7 +36,7 @@ class Monster():
 		self.Health_default = self.Health
 		self.Mana = self.Intelligence * self.Level
 		self.Mana_default = self.Mana
-		self.Expirience_give = self.Level * self.Strength
+		self.Expirience_give = 5000 #self.Level * self.Strength
 		self.Money = self.Level * rnd.randint(10,30)
 		self.Chance_to_drop_item = 100/rnd.randint(1, 200)
 		self.item_pool_init()

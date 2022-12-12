@@ -1,5 +1,9 @@
 from item import Item
+import json
+from dataclasses import dataclass, asdict
+from pathlib import Path
 
+@dataclass
 class Player():
 	PlayClass = None
 	Name = None
@@ -19,9 +23,10 @@ class Player():
 	Exp_needed_for_level_up = 100
 
 #create player
-	def __init__(self, name) -> None:
-		self.Name = name
+	def __init__(self) -> None:
 		#x = input(f'Welcome {self.name}! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
+		self.Name = "Dean"
+		self.Health_default = self.Health
 		x = 'w'
 		match x.lower():
 			case 'w':
@@ -48,7 +53,6 @@ class Player():
 				self.Health = self.Agility * 10
 				self.Mana = self.Intelligence * 10
 				self.Evasion = 100
-		self.Health_default = self.Health
 
 	def health_reset(self):
 		if self.Health_default != None:
@@ -61,9 +65,9 @@ class Player():
 		if item in self.items:
 			return item
 
-	#def level_curve_log():
+	#def level_curve_log(self):
 		#f = open("exp_table.txt", "a")
-		#f.write(f'level {self.Level}: exp {self.Exp_needed_for_level_up}\n')
+		#f.write(f'{self.Level}; {self.#Exp_needed_for_level_up}\n')
 		#f.close()
 		
 	def player_level_up(self):
@@ -74,6 +78,7 @@ class Player():
 			else:
 				self.Exp_needed_for_level_up += 100
 			self.Level += 1
+			#self.level_curve_log()
 			print('Congratulations! You are now level', self.Level)
 
 	def player_get_class(self):
@@ -92,3 +97,12 @@ class Player():
 		print('Inventory')
 		for i in self.items:
 			i.item_print()
+
+	@classmethod
+	def load_player(cls, d):
+		return cls(**d)
+
+	def save_player(self):
+		savePlayer = json.dumps(self.__dict__)
+		with open("save.json", "w") as outfile:
+			outfile.write(savePlayer)
