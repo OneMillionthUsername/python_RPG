@@ -42,7 +42,7 @@ class Monster():
 		self.item_pool_init()
 
 	def health_reset(self):
-		if self.Health_default != None:
+		if self.Health_default >= self.Health:
 			self.Health = self.Health_default
 
 	def item_pool_init(self, level = 5):

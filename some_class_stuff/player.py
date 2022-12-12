@@ -5,20 +5,20 @@ from pathlib import Path
 
 @dataclass
 class Player():
-	PlayClass = None
-	Name = None
+	PlayClass: str
+	Name: str
 	Items = []
-	Level = 1
-	Money = 0
-	Strength = None
-	Agility = None
-	Intelligence = None
-	Health = None
-	Health_default = None
-	Mana = None
-	Ragepoints = None
-	Spiritpoints = None
-	Evasionpoints = None
+	Level: int
+	Money: int
+	Strength: int
+	Agility: int
+	Intelligence: int
+	Health: int
+	Health_default: int
+	Mana: int
+	Ragepoints: int
+	Spiritpoints: int
+	Evasionpoints: int
 	Expirience = 0
 	Exp_needed_for_level_up = 100
 
@@ -26,7 +26,6 @@ class Player():
 	def __init__(self) -> None:
 		#x = input(f'Welcome {self.name}! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
 		self.Name = "Dean"
-		self.Health_default = self.Health
 		x = 'w'
 		match x.lower():
 			case 'w':
@@ -35,6 +34,7 @@ class Player():
 				self.Agility = 10
 				self.Intelligence = 7
 				self.Health = self.Strength * 15
+				self.Health_default = self.Health
 				self.Mana = self.Intelligence * 10
 				self.Ragepoints = 100
 			case 'm':
@@ -55,7 +55,7 @@ class Player():
 				self.Evasion = 100
 
 	def health_reset(self):
-		if self.Health_default != None:
+		if self.Health_default >= self.Health:
 			self.Health = self.Health_default
 	
 	def player_add_item(self, item):
@@ -99,8 +99,21 @@ class Player():
 			i.item_print()
 
 	@classmethod
-	def load_player(cls, d):
-		return cls(**d)
+	def load_player(self, data) -> 'Player':
+		self.Name = str(data.get("Name"))
+		self.Health_default = int(data.get("Health_default"))
+		self.PlayClass = str(data.get("PlayClass"))
+		self.Strength = int(data.get("Strength"))
+		self.Agility = int(data.get("Agility"))
+		self.Intelligence = int(data.get("Intelligence"))
+		self.Health = int(data.get("Health"))
+		self.Mana = int(data.get("Mana"))
+		self.Ragepoints = int(data.get("Ragepoints"))
+		self.Expirience = int(data.get("Expirience"))
+		self.Exp_needed_for_level_up = int(data.get("Exp_needed_for_level_up"))
+		self.Level = int(data.get("Level"))
+		self.Money = int(data.get("Money"))
+		return Player()
 
 	def save_player(self):
 		savePlayer = json.dumps(self.__dict__)

@@ -15,11 +15,11 @@ def main():
 	path = Path.joinpath(Path.cwd(), "save.json")
 	
 	if Path.exists(path):
-		pass
-		#player = Player.load_player(json.loads(path.read_text()))
+		loadPlayer = json.loads(path.read_text())
+		player = Player.load_player(loadPlayer)
 	else:
-		pass
-	player = Player()
+		player = Player()
+  
 	while condition:
 		#init player
 		#init monster

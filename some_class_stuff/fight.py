@@ -46,4 +46,5 @@ def fight(player, monster) -> bool:
 				return True
 		else:
 			#print(f'You found {monster.Money} gold.')
+			player.save_player()
 			return True
