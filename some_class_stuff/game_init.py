@@ -14,11 +14,12 @@ def main():
 
 	path = Path.joinpath(Path.cwd(), "save.json")
 	
-	if Path.exists(path):
+	if Path.exists(path) and path.stat().st_size > 0:
 		loadPlayer = json.loads(path.read_text())
 		player = Player.load_player(loadPlayer)
 	else:
 		player = Player()
+		player.save_player()
   
 	while condition:
 		#init player

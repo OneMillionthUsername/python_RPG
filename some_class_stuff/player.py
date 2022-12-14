@@ -19,40 +19,44 @@ class Player():
 	Ragepoints: int
 	Spiritpoints: int
 	Evasionpoints: int
-	Expirience = 0
-	Exp_needed_for_level_up = 100
+	Expirience: int
+	Exp_needed_for_level_up: int
 
 #create player
-	def __init__(self) -> None:
+	def __init__(self, playclass, name, level,money, str, agi, int, rage,spirit, eva, exp, exp_for_level_up) -> None:
 		#x = input(f'Welcome {self.name}! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
-		self.Name = "Dean"
-		x = 'w'
+		self.Name = name
+		self.Level = level
+		self.Money = money
+		self.Expirience = exp
+		self.Exp_needed_for_level_up = exp_for_level_up
+		x = 'w' #str(input("Wählen Sie eine Klasse: "))
 		match x.lower():
 			case 'w':
-				self.PlayClass = 'Warrior'
-				self.Strength = 17
-				self.Agility = 10
-				self.Intelligence = 7
+				self.PlayClass = playclass
+				self.Strength = str
+				self.Agility = agi
+				self.Intelligence = int
 				self.Health = self.Strength * 15
 				self.Health_default = self.Health
 				self.Mana = self.Intelligence * 10
-				self.Ragepoints = 100
+				self.Ragepoints = rage
 			case 'm':
-				self.PlayClass = 'Magician'
-				self.Strength = 7
-				self.Agility = 10
-				self.Intelligence = 17
+				self.PlayClass = playclass
+				self.Strength = str
+				self.Agility = agi
+				self.Intelligence = int
 				self.Health = self.Strength * 10
 				self.Mana = self.Intelligence * 15
-				self.Spiritpoint = 100
+				self.Spiritpoints = spirit
 			case 'b':
-				self.PlayClass = 'Bowmaster'
-				self.Strength = 10
-				self.Agility = 17
-				self.Intelligence = 7
+				self.PlayClass = playclass
+				self.Strength = str
+				self.Agility = agi
+				self.Intelligence = int
 				self.Health = self.Agility * 10
 				self.Mana = self.Intelligence * 10
-				self.Evasion = 100
+				self.Evasion = eva
 
 	def health_reset(self):
 		if self.Health_default >= self.Health:
@@ -100,20 +104,28 @@ class Player():
 
 	@classmethod
 	def load_player(self, data) -> 'Player':
-		self.Name = str(data.get("Name"))
-		self.Health_default = int(data.get("Health_default"))
-		self.PlayClass = str(data.get("PlayClass"))
-		self.Strength = int(data.get("Strength"))
-		self.Agility = int(data.get("Agility"))
-		self.Intelligence = int(data.get("Intelligence"))
-		self.Health = int(data.get("Health"))
-		self.Mana = int(data.get("Mana"))
-		self.Ragepoints = int(data.get("Ragepoints"))
-		self.Expirience = int(data.get("Expirience"))
-		self.Exp_needed_for_level_up = int(data.get("Exp_needed_for_level_up"))
-		self.Level = int(data.get("Level"))
-		self.Money = int(data.get("Money"))
-		return Player()
+		name = str(data.get("Name"))
+		playclass = str(data.get("PlayClass"))
+		strength = int(data.get("Strength"))
+		agi = int(data.get("Agility"))
+		intelligence = int(data.get("Intelligence"))
+		exp = int(data.get("Expirience"))
+		exp_for_level_up = int(data.get("Exp_needed_for_level_up"))
+		if data.get("Ragepoints") != None:
+			rage = int(data.get("Ragepoints"))
+		else:
+			rage = 0
+		if data.get("Spiritpoints") != None:
+			spirit = int(data.get("Spiritpoints"))
+		else:
+			spirit = 0
+		if data.get("Evasion") != None:
+			eva = int(data.get("Evasion"))
+		else:
+			eva = 0
+		level = int(data.get("Level"))
+		money = int(data.get("Money"))
+		return Player(playclass, name, level, money, strength, agi, intelligence, rage, spirit, eva, exp, exp_for_level_up)
 
 	def save_player(self):
 		savePlayer = json.dumps(self.__dict__)
