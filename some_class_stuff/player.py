@@ -2,6 +2,7 @@ from item import Item
 import json
 from dataclasses import dataclass, asdict
 from pathlib import Path
+import random as r
 
 @dataclass
 class Player():
@@ -73,7 +74,7 @@ class Player():
 		#f = open("exp_table.txt", "a")
 		#f.write(f'{self.Level}; {self.#Exp_needed_for_level_up}\n')
 		#f.close()
-		
+  		
 	def player_level_up(self):
 		while self.Expirience > self.Exp_needed_for_level_up:
 			self.Expirience -= self.Exp_needed_for_level_up
@@ -82,8 +83,18 @@ class Player():
 			else:
 				self.Exp_needed_for_level_up += 100
 			self.Level += 1
-			#self.level_curve_log()
 			print('Congratulations! You are now level', self.Level)
+#changing stats depends on playerclass
+			strength = r.randint(1, 3)
+			print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
+			self.Strength += strength
+			intelligence = r.randint(1, 1)
+			print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
+			self.Intelligence += intelligence
+			agility = r.randint(1, 2)
+			print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
+			self.Agility += agility
+			#self.level_curve_log()
 
 	def player_get_class(self):
 		return self.playClass
@@ -98,8 +109,11 @@ class Player():
 		self.money -= m
 
 	def player_inventory_print(self):
+		count = 0
 		print('Inventory')
-		for i in self.items:
+		for i in self.Items:
+			count += 1
+			print(count)
 			i.item_print()
 
 	@classmethod
