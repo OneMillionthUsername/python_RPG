@@ -62,7 +62,7 @@ class Player():
 	def health_reset(self):
 		if self.Health_default >= self.Health:
 			self.Health = self.Health_default
-	
+
 	def player_add_item(self, item):
 		self.items.append(item)
 	
@@ -74,6 +74,16 @@ class Player():
 		#f = open("exp_table.txt", "a")
 		#f.write(f'{self.Level}; {self.#Exp_needed_for_level_up}\n')
 		#f.close()
+  
+	def health_curve_log(self, health):
+		f = open("health_table.txt", "a")
+		f.write(f'{self.Level}; {health}\n')
+		f.close()
+  
+	def inventory_log(self):
+		f = open("inventory_table.txt", "w")
+		f.write(self.Items)
+		f.close()
   		
 	def player_level_up(self):
 		while self.Expirience > self.Exp_needed_for_level_up:
@@ -88,6 +98,8 @@ class Player():
 			strength = r.randint(1, 3)
 			print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
 			self.Strength += strength
+			self.Health_default = self.Strength * 15
+			self.health_curve_log(self.Health_default)
 			intelligence = r.randint(1, 1)
 			print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
 			self.Intelligence += intelligence
@@ -109,12 +121,12 @@ class Player():
 		self.money -= m
 
 	def player_inventory_print(self):
-		count = 0
-		print('Inventory')
-		for i in self.Items:
-			count += 1
-			print(count)
-			i.item_print()
+		#count = 0
+		print(self.Items)
+		# for i in self.Items:
+		# 	count += 1
+		# 	print(count)
+		# 	i.item_print()
 
 	@classmethod
 	def load_player(self, data) -> 'Player':

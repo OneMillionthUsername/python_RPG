@@ -29,14 +29,14 @@ def main():
 		if player.Level == 99:
 			condition = False
 		else:
-			print('Menu:')
-			print('I for inventory')
-			print('F for fight')
-			userinput = input('Chose a command')
-			if userinput.lower() == 'i':
-				player.player_inventory_print()
-			elif userinput.lower() != 'i':
-				pass
+			# print('Menu:')
+			# print('I for inventory')
+			# print('F for fight')
+			# userinput = input('Chose a command')
+			# if userinput.lower() == 'i':
+			# 	player.player_inventory_print()
+			# elif userinput.lower() != 'i':
+			# 	pass
 			condition = True
 		count += 1
 	#print('Number of fights for this item rarity:', count)
