@@ -28,6 +28,7 @@ def main():
 		f.fight(player, monster)
 		if player.Level == 99:
 			condition = False
+			player.inventory_log()
 		else:
 			# print('Menu:')
 			# print('I for inventory')

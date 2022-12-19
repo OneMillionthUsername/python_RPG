@@ -75,14 +75,17 @@ class Player():
 		#f.write(f'{self.Level}; {self.#Exp_needed_for_level_up}\n')
 		#f.close()
   
-	def health_curve_log(self, health):
-		f = open("health_table.txt", "a")
-		f.write(f'{self.Level}; {health}\n')
-		f.close()
+# 	def health_curve_log(self, health):
+# # 1/3 health bonus from level, 1/3 from gear, 1/3 from combination.
+# # max_health = 9999 => ~ 3333 from level, 3333 from gear, 3333 from combination.
+# 		f = open("health_table.txt", "a")
+# 		f.write(f'{self.Level}; {health}\n')
+# 		f.close()
   
 	def inventory_log(self):
 		f = open("inventory_table.txt", "w")
-		f.write(self.Items)
+		for i in self.Items:
+			f.write(i.item_print())
 		f.close()
   		
 	def player_level_up(self):
@@ -93,18 +96,18 @@ class Player():
 			else:
 				self.Exp_needed_for_level_up += 100
 			self.Level += 1
-			print('Congratulations! You are now level', self.Level)
-#changing stats depends on playerclass
+			#print('Congratulations! You are now level', self.Level)
+# changing stats depends on playerclass
 			strength = r.randint(1, 3)
-			print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
+			#print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
 			self.Strength += strength
 			self.Health_default = self.Strength * 15
-			self.health_curve_log(self.Health_default)
+			#self.health_curve_log(self.Health_default)
 			intelligence = r.randint(1, 1)
-			print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
+			#print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
 			self.Intelligence += intelligence
 			agility = r.randint(1, 2)
-			print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
+			#print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
 			self.Agility += agility
 			#self.level_curve_log()
 
