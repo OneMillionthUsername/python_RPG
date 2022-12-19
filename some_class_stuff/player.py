@@ -23,7 +23,6 @@ class Player():
 	Expirience: int
 	Exp_needed_for_level_up: int
 
-#create player
 	def __init__(self, playclass, name, level,money, str, agi, int, rage,spirit, eva, exp, exp_for_level_up) -> None:
 		#x = input(f'Welcome {self.name}! Select a class: W for warrior, M for Magician, B for Bowmaster\n')
 		self.Name = name
@@ -125,12 +124,8 @@ class Player():
 		self.money -= m
 
 	def player_inventory_print(self):
-		#count = 0
 		print(self.Items)
-		# for i in self.Items:
-		# 	count += 1
-		# 	print(count)
-		# 	i.item_print()
+
 
 	@classmethod
 	def load_player(self, data) -> 'Player':
