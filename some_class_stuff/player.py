@@ -83,10 +83,11 @@ class Player():
 # 		f.close()
   
 	def inventory_log(self):
-		f = open("inventory_table.txt", "w")
+		#f = open("inventory_table.txt", "w")
 		for i in self.Items:
-			f.write(i.item_print())
-		f.close()
+			print(i.item_print())
+			#f.write(i.item_print())
+		#f.close()
   		
 	def player_level_up(self):
 		while self.Expirience > self.Exp_needed_for_level_up:
