@@ -1,10 +1,6 @@
 from player import Player
 from monster import Monster
 import fight as f
-from pathlib import Path
-import json
-from types import SimpleNamespace
-from dataclasses import dataclass, asdict
 
 def main():
 

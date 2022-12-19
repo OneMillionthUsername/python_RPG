@@ -1,7 +1,6 @@
 """TESTINT item pool and drop chance
 """
 import item_init
-from item import Item
 import unittest
 
 class Testing(unittest.TestCase):

@@ -1,5 +1,5 @@
 import random as r
-from colorama import Fore, Back, Style
+from colorama import Fore
 
 
 class Item():
