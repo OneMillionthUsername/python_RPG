@@ -1,4 +1,6 @@
 import random as r
+from colorama import Fore, Back, Style
+
 
 class Item():
 	Name = None
@@ -10,7 +12,7 @@ class Item():
 	Manabonus = None 
 	Levelbonus = None
 	Drop_chance = None
-	Rarity = ['normal', 'magic', 'rare', 'epic', 'unique', 'legendary']
+	Rarity = [Fore.WHITE + 'normal', Fore.BLUE + 'magic', Fore.YELLOW + 'rare', Fore.MAGENTA + 'epic', Fore.CYAN + 'unique', Fore.RED + 'legendary']
 	weapon_names_warrior = ["Sword", "Shield", "Axe"]
 	weapon_names_magician = ["Staff", "Wand", "Papyrus"]
 	weapon_names_bowmaster = ["Bow", "Crossbow", "Slingshot"]
@@ -41,14 +43,14 @@ class Item():
 		self.set_item_rarity()
 	
 	def item_print(self):
-		print('Name:',self.Name, 'Price:',self.Price, 'Gold:', 'Strength:',self.Strength, 'Agility:',self.Agility, 'Intelligence:',self.Intelligence, 'Healthbonus:',self.Healthbonus, 'Manabonus:',self.Manabonus, 'Levelbonus:',self.Levelbonus, 'Rarity:',self.Rarity, 'Dropchance:', self.Drop_chance)
+		return str(f'### Name: {self.Name} ###\nPrice: {self.Price} Strength: {self.Strength} Agility: {self.Agility} Intelligence: {self.Intelligence} Healthbonus: {self.Healthbonus} Manabonus: {self.Manabonus} Levelbonus: {self.Levelbonus} Rarity: {self.Rarity} Dropchance: {self.Drop_chance}\n')
 
 	def set_item_rarity(self):
 		if self.Drop_chance <= 2:
 			self.Rarity = self.Rarity[5]
-		elif self.Drop_chance <= 4:
+		elif self.Drop_chance <= 4: #error - drop chance is 2% not 4
 			self.Rarity = self.Rarity[4]
-		elif self.Drop_chance <= 8:
+		elif self.Drop_chance <= 8: #drop chance is 4% not 8
 			self.Rarity = self.Rarity[3]
 		elif self.Drop_chance <= 16:
 			self.Rarity = self.Rarity[2]

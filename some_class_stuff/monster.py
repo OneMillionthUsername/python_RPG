@@ -2,11 +2,13 @@ import random as rnd
 from item import Item
 
 class Monster():
-	Name = None
+	Name = ['Dragon', 'Bat', 'Bug', 'Wolf', 'Spider', 'Lion', 'Dinosaur', 'Whale', 'Kakadu']
+	Kind = ['Reptile', 'Arachnoid', 'Fish', 'Bird', 'Ancient', 'Notoriouts', 'Boss', 'Feral', 'Insect', 'Humanoid', 'Ghost', 'Energy']
+	ElementType = ['Water', 'Electro', 'Air', 'Earth', 'Light', 'Dark', 'Holy', 'Unholy', 'God']
+	Battle_class = ['Flying', 'Swimming', 'Normal', 'Furious', 'Tame', 'Aggressive', 'Anxious']
 	Items = []
 	Level = 1
 	Money = 0
-	Battle_class = None
 	Strength = None
 	Agility = None
 	Intelligence = None
@@ -21,9 +23,11 @@ class Monster():
 	Chance_to_drop_item = None
 	Drop_seed = 200 
  
-	def	__init__(self, name, battle_class, max_level) -> None:
-		self.Name = name
-		self.Battle_class = battle_class
+	def	__init__(self, max_level) -> None:
+		self.Name = self.Name[rnd.randint(0, len(self.Name)-1)]
+		self.Battle_class = self.Battle_class[rnd.randint(0, len(self.Battle_class)-1)]
+		self.Kind = self.Kind[rnd.randint(0, len(self.Kind)-1)]
+		self.ElementType = self.ElementType[rnd.randint(0, len(self.ElementType)-1)]
 		self.Level = rnd.randint(1,max_level)
 		self.Strength = self.Level * rnd.randint(1,self.Level *10)
 		self.Agility = self.Level * rnd.randint(1,self.Level *7)
@@ -32,13 +36,13 @@ class Monster():
 		self.Health_default = self.Health
 		self.Mana = self.Intelligence * self.Level
 		self.Mana_default = self.Mana
-		self.Expirience_give = self.Level * self.Strength
+		self.Expirience_give = 5000 #self.Level * self.Strength
 		self.Money = self.Level * rnd.randint(10,30)
 		self.Chance_to_drop_item = 100/rnd.randint(1, 200)
 		self.item_pool_init()
 
 	def health_reset(self):
-		if self.Health_default != None:
+		if self.Health_default >= self.Health:
 			self.Health = self.Health_default
 
 	def item_pool_init(self, level = 5):
