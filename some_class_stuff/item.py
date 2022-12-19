@@ -1,4 +1,6 @@
 import random as r
+from colorama import Fore, Back, Style
+
 
 class Item():
 	Name = None
