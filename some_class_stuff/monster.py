@@ -8,6 +8,8 @@ class Monster():
 	Battle_class = ['Flying', 'Swimming', 'Normal', 'Furious', 'Tame', 'Aggressive', 'Anxious']
 	Items = []
 	Level = 1
+	Experience: int
+	Exp_needed_for_level_up: int
 	Money = 0
 	Strength: int
 	Agility: int
@@ -21,11 +23,9 @@ class Monster():
 	Evasion: int
 	Expirience_give: int
 	Chance_to_drop_item: float
-	Expirience: int
-	Exp_needed_for_level_up: int
 	Drop_seed = 200 
  
-	def	__init__(self, max_level) -> None:
+	def	__init__(self, max_level, exp, exp_for_lvl_up) -> None:
 		self.Name = self.Name[r.randint(0, len(self.Name)-1)]
 		self.Battle_class = self.Battle_class[r.randint(0, len(self.Battle_class)-1)]
 		self.Kind = self.Kind[r.randint(0, len(self.Kind)-1)]
@@ -41,6 +41,8 @@ class Monster():
 		self.Expirience_give = 5000 #self.Level * self.Strength
 		self.Money = self.Level * r.randint(10,30)
 		self.Chance_to_drop_item = 100/r.randint(1, 200)
+		self.Experience = exp
+		self.Exp_needed_for_level_up = exp_for_lvl_up
 		self.item_pool_init()
 
 	def health_reset(self):
@@ -56,8 +58,8 @@ class Monster():
 			self.Items.append(item)
 			i += 1
 	def monster_level_up(self):
-		while self.Expirience > self.Exp_needed_for_level_up:
-			self.Expirience -= self.Exp_needed_for_level_up
+		while self.Experience > self.Exp_needed_for_level_up:
+			self.Experience -= self.Exp_needed_for_level_up
 			if self.Level != 1:
 				self.Exp_needed_for_level_up = self.Exp_needed_for_level_up + (self.Level - 1) * 100
 			else:
