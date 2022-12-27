@@ -9,18 +9,20 @@ class Monster():
 	Items = []
 	Level = 1
 	Money = 0
-	Strength = None
-	Agility = None
-	Intelligence = None
-	Health = None
-	Health_default = None
-	Mana = None
-	Mana_default = None
-	Rage = None
-	Spirit = None
-	Evasion = None
-	Expirience_give = None
-	Chance_to_drop_item = None
+	Strength: int
+	Agility: int
+	Intelligence: int
+	Health: int
+	Health_default: int
+	Mana: int
+	Mana_default: int
+	Rage: int
+	Spirit: int
+	Evasion: int
+	Expirience_give: int
+	Chance_to_drop_item: float
+	Expirience: int
+	Exp_needed_for_level_up: int
 	Drop_seed = 200 
  
 	def	__init__(self, max_level) -> None:
