@@ -12,7 +12,7 @@ class Item():
 	Manabonus = None 
 	Levelbonus = None
 	Drop_chance = None
-	Rarity = [Fore.WHITE + 'normal', Fore.BLUE + 'magic', Fore.YELLOW + 'rare', Fore.MAGENTA + 'epic', Fore.CYAN + 'unique', Fore.RED + 'legendary']
+	Rarity = [Fore.WHITE + 'normal'+ Fore.RESET, Fore.BLUE + 'magic'+ Fore.RESET, Fore.YELLOW + 'rare'+ Fore.RESET, Fore.MAGENTA + 'epic'+ Fore.RESET, Fore.CYAN + 'unique'+ Fore.RESET, Fore.RED + 'legendary' + Fore.RESET]
 	weapon_names_warrior = ["Sword", "Shield", "Axe"]
 	weapon_names_magician = ["Staff", "Wand", "Papyrus"]
 	weapon_names_bowmaster = ["Bow", "Crossbow", "Slingshot"]

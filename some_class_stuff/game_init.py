@@ -14,7 +14,7 @@ def main():
 	# 	loadPlayer = json.loads(path.read_text())
 	# 	player = Player.load_player(loadPlayer)
 	# else:
-	player = Player('Warrior', 'Dean', 1, 0, 17, 10, 7, 100, None, None, 0,100)
+	player = Player('Warrior', 'Toto', 1, 0, 17, 10, 7, 100, None, None, 0,100)
 	player.save_player()
   
 	while condition:
