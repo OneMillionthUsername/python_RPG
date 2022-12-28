@@ -57,5 +57,5 @@ class Monster():
 
 	def monster_stats_log(self):
 		f = open("monster_stats.txt", "a")
-		f.write(f'{self.Level}; {self.Strength}; {self.Agility}; {self.Intelligence}; {self.Health}; {self.Mana}; {self.Items}\n')
+		f.write(f'{self.Level}; {self.Strength}; {self.Agility}; {self.Intelligence}; {self.Health}; {self.Mana} \n')
 		f.close()

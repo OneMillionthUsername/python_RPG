@@ -101,7 +101,7 @@ class Player():
 			print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
 			self.Strength += strength
 			self.Health_default = self.Strength * 15
-			self.health_curve_log(self.Health_default)
+			#self.health_curve_log(self.Health_default)
 			intelligence = r.randint(1, 1)
 			print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
 			self.Intelligence += intelligence

@@ -1,6 +1,7 @@
 from player import Player
 from monster import Monster
 import fight as f
+import keyboard
 
 def main():
 
@@ -18,6 +19,7 @@ def main():
 	player.save_player()
   
 	while condition:
+		count += 1
 		#init player
 		#init monster
 		monster = Monster(player.Level / 2 + 1)
@@ -28,17 +30,13 @@ def main():
 			condition = False
 			player.inventory_log()
 		else:
-			# print('Menu:')
+			print('Continue?')
 			# print('I for inventory')
 			# print('F for fight')
-			# userinput = input('Chose a command')
-			# if userinput.lower() == 'i':
-			# 	player.player_inventory_print()
-			# elif userinput.lower() != 'i':
-			# 	pass
-			condition = True
-		count += 1
-	#print('Number of fights for this item rarity:', count)
-
+			if keyboard.read_key().lower() == 'y': 
+				condition = True
+			elif keyboard.read_key().lower() == 'n':
+			 	condition = False
+    
 if __name__ == "__main__":
 	main()
