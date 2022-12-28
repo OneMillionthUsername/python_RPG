@@ -49,10 +49,9 @@ class Monster():
 
 	def item_pool_init(self, level = 5):
 		i = 0
+		self.Items = []
 		for i in range(level):
 			item = Item()
-			#fo Item_create
-			#item = Item(self.weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
 			self.Items.append(item)
 			i += 1
 
@@ -60,25 +59,3 @@ class Monster():
 		f = open("monster_stats.txt", "a")
 		f.write(f'{self.Level}; {self.Strength}; {self.Agility}; {self.Intelligence}; {self.Health}; {self.Mana}; {self.Items}\n')
 		f.close()
-	#def monster_level_up(self):
-	# 	while self.Experience > self.Exp_needed_for_level_up:
-	# 		self.Experience -= self.Exp_needed_for_level_up
-	# 		if self.Level != 1:
-	# 			self.Exp_needed_for_level_up = self.Exp_needed_for_level_up + (self.Level - 1) * 100
-	# 		else:
-	# 			self.Exp_needed_for_level_up += 100
-	# 		self.Level += 1
-	# 		#print('Congratulations! You are now level', self.Level)
-	# # changing stats depends on playerclass
-	# 		strength = r.randint(1, 3)
-	# 		#print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
-	# 		self.Strength += strength
-	# 		self.Health_default = self.Strength * 15
-	# 		#self.health_curve_log(self.Health_default)
-	# 		intelligence = r.randint(1, 1)
-	# 		#print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
-	# 		self.Intelligence += intelligence
-	# 		agility = r.randint(1, 2)
-	# 		#print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
-	# 		self.Agility += agility
-			#self.level_curve_log()

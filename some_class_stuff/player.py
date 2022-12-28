@@ -95,18 +95,18 @@ class Player():
 			else:
 				self.Exp_needed_for_level_up += 100
 			self.Level += 1
-			#print('Congratulations! You are now level', self.Level)
+			print('Congratulations! You are now level', self.Level)
 # changing stats depends on playerclass
 			strength = r.randint(1, 3)
-			#print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
+			print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
 			self.Strength += strength
 			self.Health_default = self.Strength * 15
-			#self.health_curve_log(self.Health_default)
+			self.health_curve_log(self.Health_default)
 			intelligence = r.randint(1, 1)
-			#print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
+			print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
 			self.Intelligence += intelligence
 			agility = r.randint(1, 2)
-			#print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
+			print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
 			self.Agility += agility
 			#self.level_curve_log()
 
@@ -124,7 +124,6 @@ class Player():
 
 	def player_inventory_print(self):
 		print(self.Items)
-
 
 	@classmethod
 	def load_player(self, data) -> 'Player':

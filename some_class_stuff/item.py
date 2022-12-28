@@ -30,17 +30,17 @@ class Item():
 		self.Drop_chance = r.randint(1, 100)
 		self.set_item_rarity()
 	
-	def Item_create(self, name, price, strength, agility, intelligence, health, mana, level, chance, rarity = 0):
-		self.Name = name
-		self.Price = price
-		self.Strength = strength
-		self.Agility = agility
-		self.Intelligence = intelligence
-		self.Healthbonus = health
-		self.Manabonus = mana
-		self.Levelbonus = level
-		self.Drop_chance = chance
-		self.set_item_rarity()
+	# def Item_create(self, name, price, strength, agility, intelligence, health, mana, level, chance, rarity = 0):
+	# 	self.Name = name
+	# 	self.Price = price
+	# 	self.Strength = strength
+	# 	self.Agility = agility
+	# 	self.Intelligence = intelligence
+	# 	self.Healthbonus = health
+	# 	self.Manabonus = mana
+	# 	self.Levelbonus = level
+	# 	self.Drop_chance = chance
+	# 	self.set_item_rarity()
 	
 	def item_print(self):
 		return str(f'### Name: {self.Name} ###\nPrice: {self.Price} Strength: {self.Strength} Agility: {self.Agility} Intelligence: {self.Intelligence} Healthbonus: {self.Healthbonus} Manabonus: {self.Manabonus} Levelbonus: {self.Levelbonus} Rarity: {self.Rarity} Dropchance: {self.Drop_chance}\n')
@@ -63,7 +63,5 @@ class Item():
 		j = 0
 		for j in range(level):
 			item = Item()
-			#fo Item_create
-			#item = Item(self.weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
 			self.pool.append(item)
 			j += 1
