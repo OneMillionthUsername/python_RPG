@@ -26,7 +26,7 @@ def fight(player, monster) -> bool:
 		print('Game over!')
 		return False
 	else:
-		print(f'{monster.Name} falls to the ground and gives {monster.Expirience_give} expirience.')
+		print(f'{monster.Name} falls to the ground.')
 		player.Expirience += monster.Expirience_give
 		if player.Expirience >= player.Exp_needed_for_level_up:
 			player.player_level_up()

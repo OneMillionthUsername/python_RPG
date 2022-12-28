@@ -102,13 +102,13 @@ class Player():
 			self.Strength += strength
 			self.Health_default = self.Strength * 15
 			#self.health_curve_log(self.Health_default)
+			#self.level_curve_log()
 			intelligence = r.randint(1, 1)
 			print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
 			self.Intelligence += intelligence
 			agility = r.randint(1, 2)
 			print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
 			self.Agility += agility
-			#self.level_curve_log()
 
 	def player_get_class(self):
 		return self.playClass
