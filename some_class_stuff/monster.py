@@ -7,7 +7,7 @@ class Monster():
 	ElementType = ['Water', 'Electro', 'Air', 'Earth', 'Light', 'Dark', 'Holy', 'Unholy', 'God']
 	Battle_class = ['Flying', 'Swimming', 'Normal', 'Furious', 'Tame', 'Aggressive', 'Anxious']
 	Items = []
-	Level = 1
+	Level: int
 	Experience: int
 	Exp_needed_for_level_up: int
 	Money = 0
@@ -25,12 +25,12 @@ class Monster():
 	Chance_to_drop_item: float
 	Drop_seed = 200 
  
-	def	__init__(self, max_level, exp, exp_for_lvl_up) -> None:
+	def	__init__(self, level) -> None:
 		self.Name = self.Name[r.randint(0, len(self.Name)-1)]
 		self.Battle_class = self.Battle_class[r.randint(0, len(self.Battle_class)-1)]
 		self.Kind = self.Kind[r.randint(0, len(self.Kind)-1)]
 		self.ElementType = self.ElementType[r.randint(0, len(self.ElementType)-1)]
-		self.Level = r.randint(1,max_level)
+		self.Level = round(level)
 		self.Strength = self.Level * r.randint(1,self.Level *10)
 		self.Agility = self.Level * r.randint(1,self.Level *7)
 		self.Intelligence = self.Level * r.randint(1,self.Level *3)
@@ -38,11 +38,9 @@ class Monster():
 		self.Health_default = self.Health
 		self.Mana = self.Intelligence * self.Level
 		self.Mana_default = self.Mana
-		self.Expirience_give = 5000 #self.Level * self.Strength
+		self.Expirience_give = self.Level * self.Strength
 		self.Money = self.Level * r.randint(10,30)
 		self.Chance_to_drop_item = 100/r.randint(1, 200)
-		self.Experience = exp
-		self.Exp_needed_for_level_up = exp_for_lvl_up
 		self.item_pool_init()
 
 	def health_reset(self):
@@ -57,25 +55,30 @@ class Monster():
 			#item = Item(self.weapon_names_warrior[r.randint(0,2)], r.randint(5,15), r.randint(1,5), r.randint(1,4), r.randint(1,2), r.randint(1,10) * 10, 0, r.randint(1,5), r.randint(1,100))
 			self.Items.append(item)
 			i += 1
-	def monster_level_up(self):
-		while self.Experience > self.Exp_needed_for_level_up:
-			self.Experience -= self.Exp_needed_for_level_up
-			if self.Level != 1:
-				self.Exp_needed_for_level_up = self.Exp_needed_for_level_up + (self.Level - 1) * 100
-			else:
-				self.Exp_needed_for_level_up += 100
-			self.Level += 1
-			#print('Congratulations! You are now level', self.Level)
-	# changing stats depends on playerclass
-			strength = r.randint(1, 3)
-			#print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
-			self.Strength += strength
-			self.Health_default = self.Strength * 15
-			#self.health_curve_log(self.Health_default)
-			intelligence = r.randint(1, 1)
-			#print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
-			self.Intelligence += intelligence
-			agility = r.randint(1, 2)
-			#print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
-			self.Agility += agility
+
+	def monster_stats_log(self):
+		f = open("monster_stats.txt", "a")
+		f.write(f'{self.Level}; {self.Strength}; {self.Agility}; {self.Intelligence}; {self.Health}; {self.Mana}; {self.Items}\n')
+		f.close()
+	#def monster_level_up(self):
+	# 	while self.Experience > self.Exp_needed_for_level_up:
+	# 		self.Experience -= self.Exp_needed_for_level_up
+	# 		if self.Level != 1:
+	# 			self.Exp_needed_for_level_up = self.Exp_needed_for_level_up + (self.Level - 1) * 100
+	# 		else:
+	# 			self.Exp_needed_for_level_up += 100
+	# 		self.Level += 1
+	# 		#print('Congratulations! You are now level', self.Level)
+	# # changing stats depends on playerclass
+	# 		strength = r.randint(1, 3)
+	# 		#print('Strength ', self.Strength, '->', (self.Strength + strength), ' => +', strength)
+	# 		self.Strength += strength
+	# 		self.Health_default = self.Strength * 15
+	# 		#self.health_curve_log(self.Health_default)
+	# 		intelligence = r.randint(1, 1)
+	# 		#print('Intelligence', self.Intelligence, '->', (self.Intelligence + intelligence), ' => +', intelligence)
+	# 		self.Intelligence += intelligence
+	# 		agility = r.randint(1, 2)
+	# 		#print('Agility', self.Agility, '->', (self.Agility + agility), ' => +', agility)
+	# 		self.Agility += agility
 			#self.level_curve_log()

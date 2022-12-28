@@ -20,7 +20,9 @@ def main():
 	while condition:
 		#init player
 		#init monster
-		monster = Monster(4)
+		monster = Monster(player.Level / 2 + 1)
+		if player.Level%2 == 0:
+			monster.monster_stats_log()
 		f.fight(player, monster)
 		if player.Level == 99:
 			condition = False

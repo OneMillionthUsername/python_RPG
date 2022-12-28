@@ -14,13 +14,13 @@ def fight(player, monster) -> bool:
 	while player.Health > 0 and monster.Health > 0:
 		hit = ((player.Strength + r.randint(1,5))*3)
 		monster.Health -= hit
-		# print(f'{player.Name} hits {monster.Name} for {hit} damage.')
-		hit = ((monster.Strength + r.randint(1,5))*3)%10
+		print(f'{player.Name} hits {monster.Name} for {hit} damage.')
+		hit = ((monster.Strength + r.randint(1,5))*3)%(monster.Level*10)
 		player.Health -= hit
-		# print(f'{monster.Name} hits {player.Name} for {hit} damage.')
-		# print(f'{player.Name} HP: {player.Health}')
-		# print(f'{monster.Name} HP: {monster.Health}')
-		# time.sleep(1)
+		print(f'{monster.Name} hits {player.Name} for {hit} damage.')
+		print(f'{player.Name} HP: {player.Health}')
+		print(f'{monster.Name} HP: {monster.Health}')
+		time.sleep(1)
 
 	if player.Health <= 0:
 		print('Game over!')
