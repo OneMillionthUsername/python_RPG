@@ -1,37 +1,51 @@
-2; 6; 10; 12; 167; 24 
-2; 6; 22; 4; 226; 8 
-2; 22; 14; 6; 211; 12 
-2; 18; 18; 12; 160; 24 
-2; 30; 18; 2; 203; 4 
-3; 15; 3; 6; 215; 18 
-3; 72; 3; 15; 183; 45 
-3; 54; 33; 18; 182; 54 
-3; 69; 33; 3; 171; 9 
-4; 112; 72; 20; 213; 80 
-4; 36; 44; 12; 172; 48 
-4; 152; 84; 8; 209; 32 
-5; 130; 170; 30; 202; 150 
-5; 155; 85; 35; 154; 175 
-5; 250; 5; 55; 239; 275 
-6; 306; 6; 36; 180; 216 
-6; 312; 84; 66; 182; 396 
-7; 469; 252; 7; 249; 49 
-7; 301; 273; 28; 191; 196 
-2; 32; 28; 20; 320; 200 
-2; 36; 32; 22; 360; 220 
-2; 26; 30; 20; 260; 200 
-2; 26; 40; 32; 260; 320 
-2; 28; 20; 34; 280; 340 
-2; 24; 32; 38; 240; 380 
-3; 69; 66; 51; 690; 510 
-3; 45; 69; 84; 450; 840 
-3; 57; 87; 54; 570; 540 
-3; 75; 51; 69; 750; 690 
-3; 60; 90; 84; 600; 840 
-3; 81; 72; 57; 810; 570 
-3; 84; 51; 72; 840; 720 
-3; 84; 51; 63; 840; 630 
-3; 45; 78; 66; 450; 660 
-3; 75; 81; 75; 750; 750 
-3; 90; 72; 72; 900; 720 
-3; 87; 45; 78; 870; 780 
+level = 2; str = 32; agi = 40; int = 34; hp = 320; mana = 340; exp = 22 
+level = 2; str = 34; agi = 36; int = 20; hp = 340; mana = 200; exp = 24 
+level = 2; str = 26; agi = 28; int = 22; hp = 260; mana = 220; exp = 20 
+level = 2; str = 32; agi = 26; int = 20; hp = 320; mana = 200; exp = 34 
+level = 2; str = 36; agi = 20; int = 32; hp = 360; mana = 320; exp = 30 
+level = 2; str = 40; agi = 40; int = 40; hp = 400; mana = 400; exp = 24 
+level = 2; str = 34; agi = 36; int = 38; hp = 340; mana = 380; exp = 30 
+level = 2; str = 30; agi = 22; int = 30; hp = 300; mana = 300; exp = 36 
+level = 2; str = 30; agi = 36; int = 34; hp = 300; mana = 340; exp = 36 
+level = 2; str = 20; agi = 32; int = 28; hp = 200; mana = 280; exp = 32 
+level = 2; str = 34; agi = 28; int = 20; hp = 340; mana = 200; exp = 40 
+level = 2; str = 28; agi = 30; int = 22; hp = 280; mana = 220; exp = 34 
+level = 2; str = 34; agi = 22; int = 20; hp = 340; mana = 200; exp = 30 
+level = 2; str = 36; agi = 28; int = 26; hp = 360; mana = 260; exp = 36 
+level = 2; str = 40; agi = 26; int = 28; hp = 400; mana = 280; exp = 26 
+level = 2; str = 24; agi = 26; int = 30; hp = 240; mana = 300; exp = 38 
+level = 2; str = 32; agi = 28; int = 24; hp = 320; mana = 240; exp = 24 
+level = 2; str = 38; agi = 26; int = 38; hp = 380; mana = 380; exp = 32 
+level = 2; str = 26; agi = 32; int = 26; hp = 260; mana = 260; exp = 24 
+level = 2; str = 26; agi = 22; int = 36; hp = 260; mana = 360; exp = 20 
+level = 2; str = 38; agi = 30; int = 26; hp = 380; mana = 260; exp = 40 
+level = 3; str = 60; agi = 84; int = 66; hp = 600; mana = 660; exp = 30 
+level = 3; str = 69; agi = 84; int = 57; hp = 690; mana = 570; exp = 33 
+level = 3; str = 84; agi = 63; int = 75; hp = 840; mana = 750; exp = 36 
+level = 3; str = 90; agi = 51; int = 69; hp = 900; mana = 690; exp = 33 
+level = 3; str = 48; agi = 66; int = 63; hp = 480; mana = 630; exp = 39 
+level = 3; str = 87; agi = 51; int = 87; hp = 870; mana = 870; exp = 36 
+level = 3; str = 51; agi = 78; int = 69; hp = 510; mana = 690; exp = 30 
+level = 3; str = 87; agi = 51; int = 60; hp = 870; mana = 600; exp = 39 
+level = 3; str = 54; agi = 87; int = 48; hp = 540; mana = 480; exp = 33 
+level = 3; str = 51; agi = 57; int = 60; hp = 510; mana = 600; exp = 57 
+level = 3; str = 90; agi = 90; int = 57; hp = 900; mana = 570; exp = 39 
+level = 3; str = 45; agi = 60; int = 63; hp = 450; mana = 630; exp = 51 
+level = 3; str = 63; agi = 66; int = 54; hp = 630; mana = 540; exp = 36 
+level = 4; str = 160; agi = 100; int = 144; hp = 1600; mana = 1440; exp = 44 
+level = 4; str = 108; agi = 88; int = 132; hp = 1080; mana = 1320; exp = 44 
+level = 4; str = 132; agi = 104; int = 148; hp = 1320; mana = 1480; exp = 80 
+level = 4; str = 116; agi = 144; int = 136; hp = 1160; mana = 1360; exp = 56 
+level = 4; str = 104; agi = 148; int = 88; hp = 1040; mana = 880; exp = 40 
+level = 4; str = 88; agi = 84; int = 128; hp = 880; mana = 1280; exp = 76 
+level = 4; str = 148; agi = 104; int = 120; hp = 1480; mana = 1200; exp = 68 
+level = 4; str = 88; agi = 116; int = 96; hp = 880; mana = 960; exp = 44 
+level = 4; str = 160; agi = 116; int = 116; hp = 1600; mana = 1160; exp = 40 
+level = 4; str = 104; agi = 104; int = 92; hp = 1040; mana = 920; exp = 64 
+level = 4; str = 108; agi = 140; int = 132; hp = 1080; mana = 1320; exp = 64 
+level = 4; str = 136; agi = 92; int = 92; hp = 1360; mana = 920; exp = 68 
+level = 4; str = 156; agi = 112; int = 100; hp = 1560; mana = 1000; exp = 48 
+level = 4; str = 120; agi = 104; int = 156; hp = 1200; mana = 1560; exp = 52 
+level = 4; str = 96; agi = 80; int = 160; hp = 960; mana = 1600; exp = 44 
+level = 4; str = 128; agi = 104; int = 136; hp = 1280; mana = 1360; exp = 64 
+level = 4; str = 84; agi = 156; int = 80; hp = 840; mana = 800; exp = 44 

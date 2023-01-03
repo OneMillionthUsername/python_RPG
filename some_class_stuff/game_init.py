@@ -23,20 +23,20 @@ def main():
 		#init player
 		#init monster
 		monster = Monster(player.Level / 2 + 1)
-		if player.Level%2 == 0:
-			monster.monster_stats_log()
+
+		monster.monster_stats_log()
 		f.fight(player, monster)
 		if player.Level == 99:
 			condition = False
 			player.inventory_log()
-		else:
-			print('Continue?')
-			# print('I for inventory')
-			# print('F for fight')
-			if keyboard.read_key().lower() == 'y': 
-				condition = True
-			elif keyboard.read_key().lower() == 'n':
-			 	condition = False
+		# else:
+		# 	print('Continue?')
+		# 	# print('I for inventory')
+		# 	# print('F for fight')
+		# 	if keyboard.read_key().lower() == 'y': 
+		# 		condition = True
+		# 	elif keyboard.read_key().lower() == 'n':
+		# 	 	condition = False
     
 if __name__ == "__main__":
 	main()
