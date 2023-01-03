@@ -26,19 +26,21 @@ class Monster():
 	Drop_seed = 200 
  
 	def	__init__(self, level) -> None:
+		#generics
 		self.Name = self.Name[r.randint(0, len(self.Name)-1)]
 		self.Battle_class = self.Battle_class[r.randint(0, len(self.Battle_class)-1)]
 		self.Kind = self.Kind[r.randint(0, len(self.Kind)-1)]
 		self.ElementType = self.ElementType[r.randint(0, len(self.ElementType)-1)]
+		#stats
 		self.Level = round(level)
-		self.Strength = self.Level * r.randint(1,self.Level *10)
-		self.Agility = self.Level * r.randint(1,self.Level *7)
-		self.Intelligence = self.Level * r.randint(1,self.Level *3)
-		self.Health = r.randint(150,250)
+		self.Strength = self.Level * r.randint(self.Level*5,self.Level *10)
+		self.Agility = self.Level * r.randint(self.Level*5,self.Level *10)
+		self.Intelligence = self.Level * r.randint(self.Level*5,self.Level *10)
+		self.Health = self.Strength * 10
 		self.Health_default = self.Health
-		self.Mana = self.Intelligence * self.Level
+		self.Mana = self.Intelligence * 10
 		self.Mana_default = self.Mana
-		self.Expirience_give = self.Level * self.Strength
+		self.Expirience_give = self.Level * r.randint(10, 20)
 		self.Money = self.Level * r.randint(10,30)
 		self.Chance_to_drop_item = 100/r.randint(1, 200)
 		self.item_pool_init()
